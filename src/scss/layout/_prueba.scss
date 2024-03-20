@@ -1,10 +1,141 @@
-.prueba {
-    background-color: blueviolet;
+$secondaryPurple: #D4BFEB;
+$tercearyPurple: #542E7E;
+$mainPurple: #3D0750;
+$yellow: #F9D44B;
+$gray: #D8E4EC;
+$mainGreen: #7DB778;
+html{
+    height: 100%;
+}
+body{
+    background-image: url("../../src/assets/gamesBackground.png");
+    background-color: $tercearyPurple;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header__container{
+    background-color: #3D0750;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 29%;
+    min-width: 100%;
+}
+.header__back-button{
+    background-color: $yellow;
+    margin-left: 10%;
+    color: white;
+    max-height: 45px;
+    font-family: 'Acme', sans-serif;
+    font-size: 3rem;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+}
+.header__title{
+    font-size: 42px;
+    font-family: 'Acme', sans-serif;
+    color: white;
+    align-self: center;
+    text-align: center;
+}
+.header__instructions-button{
+    margin-right: 10%;
+    background-color: $mainGreen;
+    color: white;
+    max-height: 45px;
+    font-family: 'Acme', sans-serif;
+    font-size: 3rem;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+}
+.steps__card-container{
+    display: grid;
+    grid-gap: 30px 100px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    margin: 6%;
+}
+.card{
+    box-sizing: border-box;
+    max-width: 250px;
+    padding: 0.45em 0.5em;
+    border: 4px solid $secondaryPurple;
+    border-radius: 5px;
+    background-color: $secondaryPurple;
+}
+.card__image-container{
+    max-width: 220px;
+    max-height: 230px;
+    position: relative;
+}
+.card__image{
+    width: 220px;
+    padding-left: 4px;
+    object-fit: contain;
+    line-height: 0;
+}
 
-    p {
-        font-family: monospace;
-        font-size: 4rem;
-        text-align: center;
+.card__text-container{
+    width: 100%;
+    height: 55px;
+    margin-top: 12px;
+    background-color: $gray;
+    border-radius: 10px;
+    &:hover {
+      background-color: $yellow;
+      cursor: move;
     }
-    
+    border-style: dashed;
+    border-color: $mainPurple;
+}
+
+
+.choose-steps__container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-gap: 20px 80px;
+    margin: 5%;
+}
+.choose-steps__pending-steps-container{
+    max-height: fit-content;
+    padding: 5px;
+    font-size: 2rem;
+    background-color: $yellow;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-family: "Acme", sans-serif;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+    transition: all 0.4s;
+    &:hover {
+        transform: scale(1.2);
+      }
+}
+.choose-steps__pending-steps-title{
+    align-self: center;
+}
+@media screen and (max-width: 768px) {
+    body{
+        min-height: 100%;
+    }
+    .steps__card-container{
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+        margin: 10%;
+    }
+    .choose-steps__container{
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+    }
+   
+}
+
+@media screen and (max-width: 1400px) and (min-width:768px){
+    .steps__card-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .choose-steps__container{
+        grid-template-columns: repeat(4, 1fr);
+        position: relative;
+    }
 }
