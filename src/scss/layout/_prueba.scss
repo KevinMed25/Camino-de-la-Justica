@@ -4,6 +4,7 @@ $mainPurple: #3D0750;
 $yellow: #F9D44B;
 $gray: #D8E4EC;
 $mainGreen: #7DB778;
+
 body{
     background-image: url("../../src/assets/gamesBackground.png");
     background-color: $tercearyPurple;
@@ -21,14 +22,10 @@ body{
     grid-gap: 29%;
 }
 .header__back-button{
-    background-color: $yellow;
-    margin-left: 10%;   
-    color: white;
-    max-height: 35px;
-    max-width: 150px;
-    font-family: 'Acme', sans-serif;
-    font-size: 2.5rem;
-    box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+    max-width: 70px;
+    max-height: 70px;
+    margin-left: 20%;
+    margin-top: 10%;
 }
 .header__title{
     font-size: 32px;
@@ -90,6 +87,10 @@ body{
     border-color: $mainPurple;
 }
 
+.card__text-container.droppable-hover{
+    background-color: #F9D44B;
+}
+
 .footer{
     max-height: 0%;
 }
@@ -115,6 +116,7 @@ body{
     transition: all 0.4s;
     &:hover {
         transform: scale(1.2);
+        background-color: #7DB778;
       }
 }
 .choose-steps__pending-steps-title{
@@ -128,11 +130,8 @@ body{
     .header__container{
         grid-gap: 0%;
     }
-    .header__back-button{
-        margin: 0;
-    }
     .header__title{
-        font-size: 32px;
+        font-size: 26px;
         align-self:center;
     }
     .steps__card-container{
@@ -147,11 +146,15 @@ body{
    
 }
 
-@media screen and (max-width: 1400px) and (min-width:768px){
+@media screen and (max-width: 1200px) and (min-width:768px){
     .header__container{
         grid-gap: 6%;
     }
 
+    .header__title{
+        font-size: 28px;
+        align-self:center;
+    }
     .steps__card-container{
         grid-template-columns: repeat(3, 1fr);
     }
