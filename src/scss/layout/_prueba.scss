@@ -4,34 +4,34 @@ $mainPurple: #3D0750;
 $yellow: #F9D44B;
 $gray: #D8E4EC;
 $mainGreen: #7DB778;
-html{
-    height: 100%;
-}
 body{
     background-image: url("../../src/assets/gamesBackground.png");
     background-color: $tercearyPurple;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
+
 .header__container{
     background-color: #3D0750;
     align-items: center;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 29%;
-    min-width: 100%;
 }
 .header__back-button{
     background-color: $yellow;
-    margin-left: 10%;
+    margin-left: 10%;   
     color: white;
-    max-height: 45px;
+    max-height: 35px;
+    max-width: 150px;
     font-family: 'Acme', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
 }
 .header__title{
-    font-size: 42px;
+    font-size: 32px;
     font-family: 'Acme', sans-serif;
     color: white;
     align-self: center;
@@ -41,17 +41,20 @@ body{
     margin-right: 10%;
     background-color: $mainGreen;
     color: white;
-    max-height: 45px;
+    max-height: 35px;
+    max-width: 150px;
     font-family: 'Acme', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
 }
 .steps__card-container{
     display: grid;
-    grid-gap: 30px 100px;
+    grid-gap: 20px 100px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
-    margin: 6%;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .card{
     box-sizing: border-box;
@@ -87,6 +90,9 @@ body{
     border-color: $mainPurple;
 }
 
+.footer{
+    max-height: 0%;
+}
 
 .choose-steps__container{
     display: grid;
@@ -94,6 +100,7 @@ body{
     grid-gap: 20px 80px;
     margin: 5%;
 }
+
 .choose-steps__pending-steps-container{
     max-height: fit-content;
     padding: 5px;
@@ -113,9 +120,20 @@ body{
 .choose-steps__pending-steps-title{
     align-self: center;
 }
+
 @media screen and (max-width: 768px) {
     body{
         min-height: 100%;
+    }
+    .header__container{
+        grid-gap: 0%;
+    }
+    .header__back-button{
+        margin: 0;
+    }
+    .header__title{
+        font-size: 32px;
+        align-self:center;
     }
     .steps__card-container{
         grid-template-columns: repeat(2, 1fr);
@@ -130,6 +148,10 @@ body{
 }
 
 @media screen and (max-width: 1400px) and (min-width:768px){
+    .header__container{
+        grid-gap: 6%;
+    }
+
     .steps__card-container{
         grid-template-columns: repeat(3, 1fr);
     }
